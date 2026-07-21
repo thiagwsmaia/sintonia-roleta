@@ -7,16 +7,17 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 ## Como jogar
 
 1. Abra uma nova rodada.
-2. A pessoa da vez segura o botao do mestre, olha o alvo secreto e escolhe uma dica.
-3. O grupo discute e move o ponteiro.
-4. Revele o alvo, some os pontos e troque a pessoa da vez.
+2. A pessoa da vez usa a Area do mestre para definir onde fica a faixa maxima.
+3. Ela escolhe uma dica que combine com aquele ponto da escala.
+4. O grupo discute e move o ponteiro.
+5. Revele o alvo, some os pontos e troque a pessoa da vez.
 
 ## Pontuacao
 
-- 4 pontos: distancia de 0 a 4 do alvo
-- 3 pontos: distancia de 5 a 9 do alvo
-- 2 pontos: distancia de 10 a 16 do alvo
-- 1 ponto: distancia de 17 a 24 do alvo
+- 4 pontos: distancia de 0 a 2 do alvo
+- 3 pontos: distancia de 3 a 5 do alvo
+- 2 pontos: distancia de 6 a 8 do alvo
+- 1 ponto: distancia de 9 a 12 do alvo
 - 0 pontos: qualquer palpite mais distante
 
 ## Rodar localmente

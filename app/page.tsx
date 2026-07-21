@@ -68,10 +68,10 @@ const cards: Card[] = [
 ];
 
 const scoreBands = [
-  { points: 4, label: "cravou", range: "0-4" },
-  { points: 3, label: "quase", range: "5-9" },
-  { points: 2, label: "perto", range: "10-16" },
-  { points: 1, label: "raspou", range: "17-24" },
+  { points: 4, label: "centro", range: "0-2" },
+  { points: 3, label: "colado", range: "3-5" },
+  { points: 2, label: "perto", range: "6-8" },
+  { points: 1, label: "borda", range: "9-12" },
 ];
 
 const initialRound: Round = {
@@ -82,7 +82,7 @@ const initialRound: Round = {
 function makeRound(): Round {
   return {
     card: cards[Math.floor(Math.random() * cards.length)],
-    target: Math.floor(10 + Math.random() * 81),
+    target: 50,
   };
 }
 
@@ -91,10 +91,10 @@ function clamp(value: number) {
 }
 
 function scoreFor(distance: number) {
-  if (distance <= 4) return 4;
-  if (distance <= 9) return 3;
-  if (distance <= 16) return 2;
-  if (distance <= 24) return 1;
+  if (distance <= 2) return 4;
+  if (distance <= 5) return 3;
+  if (distance <= 8) return 2;
+  if (distance <= 12) return 1;
   return 0;
 }
 
@@ -120,14 +120,14 @@ export default function Home() {
   const distance = Math.abs(guess - round.target);
   const currentPoints = scoreFor(distance);
   const showTarget = peeking || revealed;
-  const zoneOneStart = clamp(round.target - 24);
-  const zoneTwoStart = clamp(round.target - 16);
-  const zoneThreeStart = clamp(round.target - 9);
-  const zoneFourStart = clamp(round.target - 4);
-  const zoneFourEnd = clamp(round.target + 4);
-  const zoneThreeEnd = clamp(round.target + 9);
-  const zoneTwoEnd = clamp(round.target + 16);
-  const zoneOneEnd = clamp(round.target + 24);
+  const zoneOneStart = clamp(round.target - 12);
+  const zoneTwoStart = clamp(round.target - 8);
+  const zoneThreeStart = clamp(round.target - 5);
+  const zoneFourStart = clamp(round.target - 2);
+  const zoneFourEnd = clamp(round.target + 2);
+  const zoneThreeEnd = clamp(round.target + 5);
+  const zoneTwoEnd = clamp(round.target + 8);
+  const zoneOneEnd = clamp(round.target + 12);
 
   const dialStyle = useMemo(
     () =>
@@ -165,6 +165,13 @@ export default function Home() {
     setClue("");
     setLastPoints(null);
     setRoundNumber((value) => value + 1);
+  }
+
+  function setTarget(target: number) {
+    setRound((value) => ({
+      ...value,
+      target,
+    }));
   }
 
   function reveal() {
@@ -228,6 +235,25 @@ export default function Home() {
                 placeholder="toque numa ideia ou escreva outra"
               />
             </label>
+            <div className="master-box">
+              <div>
+                <span>Área do mestre</span>
+                <strong>{round.target}</strong>
+              </div>
+              <input
+                aria-label="Definir centro da pontuacao maxima"
+                type="range"
+                min="6"
+                max="94"
+                value={round.target}
+                onChange={(event) => setTarget(Number(event.target.value))}
+                disabled={revealed}
+              />
+              <small>
+                Posicione onde fica o centro amarelo de 4 pontos. O grupo so ve
+                quando voce segurar para mostrar ou revelar.
+              </small>
+            </div>
           </aside>
 
           <section
@@ -314,7 +340,7 @@ export default function Home() {
               ) : (
                 <>
                   <strong>{peeking ? "O mestre esta vendo" : "Alvo escondido"}</strong>
-                  <span>segure para olhar, solte antes do grupo palpitar.</span>
+                  <span>defina a faixa maxima, segure para conferir e solte antes do grupo palpitar.</span>
                 </>
               )}
             </div>
@@ -328,7 +354,7 @@ export default function Home() {
       <section className="rules-band" aria-label="Fluxo da rodada">
         <div>
           <span>1</span>
-          <p>O mestre segura o botão, vê a região e escolhe uma dica.</p>
+          <p>O mestre escolhe onde fica a faixa maxima e prepara a dica.</p>
         </div>
         <div>
           <span>2</span>
@@ -336,7 +362,7 @@ export default function Home() {
         </div>
         <div>
           <span>3</span>
-          <p>Revela, soma 4, 3, 2 ou 1 ponto e troca o mestre.</p>
+          <p>Revela, soma pela faixa estreita e troca o mestre.</p>
         </div>
       </section>
     </main>
