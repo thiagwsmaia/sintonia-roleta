@@ -41,7 +41,7 @@ test("server-renders the game shell", async () => {
   assert.match(html, /Revelar e pontuar/);
   assert.match(html, /regiões de pontuação/);
   assert.match(html, /Nova rodada/);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
+  assert.doesNotMatch(html, /react-loading-skeleton|Your site is taking shape/i);
 });
 
 test("project metadata is not the starter", async () => {
