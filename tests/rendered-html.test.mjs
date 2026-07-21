@@ -32,6 +32,7 @@ test("server-renders the game shell", async () => {
   assert.match(html, /<title>Sintonia Roleta<\/title>/i);
   assert.match(html, /Sintonia Roleta/);
   assert.match(html, /jogo de mesa local/);
+  assert.match(html, /Editar tema/);
   assert.match(html, /50<!-- --> temas|50 temas/);
   assert.match(html, /Girar a janela secreta/);
   assert.match(html, /Sortear pontuação/);

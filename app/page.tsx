@@ -104,6 +104,7 @@ function angleFor(value: number) {
 
 export default function Home() {
   const [round, setRound] = useState<Round>(initialRound);
+  const [themeLabel, setThemeLabel] = useState(initialRound.card.theme);
   const [leftLabel, setLeftLabel] = useState(initialRound.card.left);
   const [rightLabel, setRightLabel] = useState(initialRound.card.right);
   const [manualTargetOpen, setManualTargetOpen] = useState(false);
@@ -119,6 +120,7 @@ export default function Home() {
     const frame = requestAnimationFrame(() => {
       const next = makeRound();
       setRound(next);
+      setThemeLabel(next.card.theme);
       setLeftLabel(next.card.left);
       setRightLabel(next.card.right);
     });
@@ -141,6 +143,7 @@ export default function Home() {
   function nextRound() {
     const next = makeRound();
     setRound(next);
+    setThemeLabel(next.card.theme);
     setLeftLabel(next.card.left);
     setRightLabel(next.card.right);
     setGuess(50);
@@ -197,7 +200,12 @@ export default function Home() {
             value={leftLabel}
             onChange={(event) => setLeftLabel(event.target.value)}
           />
-          <span>{round.card.theme}</span>
+          <input
+            aria-label="Editar tema"
+            className="theme-input"
+            value={themeLabel}
+            onChange={(event) => setThemeLabel(event.target.value)}
+          />
           <input
             aria-label="Editar extremo direito"
             value={rightLabel}
@@ -211,7 +219,13 @@ export default function Home() {
               <p className="eyebrow">rodada {roundNumber}</p>
               <span>{cards.length} temas</span>
             </div>
-            <h2>{round.card.theme}</h2>
+            <label className="theme-field">
+              <span>Tema</span>
+              <input
+                value={themeLabel}
+                onChange={(event) => setThemeLabel(event.target.value)}
+              />
+            </label>
             <div className="scale-labels">
               <label>
                 <span>Extremo esquerdo</span>
