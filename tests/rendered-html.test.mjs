@@ -39,7 +39,7 @@ test("server-renders the game shell", async () => {
   assert.match(html, /Ajustar manualmente/);
   assert.match(html, /Segurar para o mestre ver/);
   assert.match(html, /Revelar e pontuar/);
-  assert.match(html, /regioes de pontuação/);
+  assert.match(html, /regiões de pontuação/);
   assert.match(html, /Nova rodada/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });

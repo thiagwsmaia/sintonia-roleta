@@ -172,14 +172,17 @@ h2 {
   display: block;
   width: 100%;
   min-width: 0;
-  border: 0;
-  background: transparent;
-  color: #ffffff;
+  border: 2px solid rgba(21, 26, 31, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 250, 240, 0.92);
+  color: var(--ink);
   font-size: clamp(1.2rem, 3.2vw, 2.6rem);
   font-weight: 950;
   line-height: 0.96;
   outline: none;
-  text-shadow: 2px 2px 0 rgba(21, 26, 31, 0.94);
+  padding: 6px 10px;
+  text-shadow: none;
+  box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.72);
 }
 
 .prompt-strip input:last-child {
@@ -192,8 +195,8 @@ h2 {
   padding: 8px 12px;
   border: 2px solid var(--ink);
   border-radius: 999px;
-  background: var(--ink);
-  color: #ffffff;
+  background: var(--amber);
+  color: var(--ink);
   font-size: 0.78rem;
   font-weight: 900;
   text-align: center;
@@ -455,24 +458,27 @@ h2 {
 .side-label {
   position: absolute;
   z-index: 4;
-  top: 42%;
-  max-width: 150px;
-  color: #ffffff;
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  top: 38%;
+  max-width: min(28%, 150px);
+  padding: 5px 8px;
+  border: 2px solid rgba(21, 26, 31, 0.9);
+  border-radius: 8px;
+  background: rgba(255, 250, 240, 0.9);
+  color: var(--ink);
+  font-size: clamp(0.95rem, 2.2vw, 1.55rem);
   font-weight: 950;
-  line-height: 0.95;
-  text-shadow:
-    2px 2px 0 #151a1f,
-    -1px 1px 0 #151a1f,
-    1px -1px 0 #151a1f;
+  line-height: 1;
+  overflow-wrap: anywhere;
+  text-shadow: none;
+  box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.62);
 }
 
 .left-label {
-  left: 0;
+  left: 2%;
 }
 
 .right-label {
-  right: 0;
+  right: 2%;
   text-align: right;
 }
 

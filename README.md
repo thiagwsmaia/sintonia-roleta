@@ -7,21 +7,21 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 ## Como jogar
 
 1. Abra uma nova rodada.
-2. A pessoa da vez gira ou sorteia a janela secreta para definir onde fica a faixa maxima.
+2. A pessoa da vez gira ou sorteia a janela secreta para definir onde fica a faixa máxima.
 3. Edite os dois extremos da escala se quiser adaptar o tema da rodada.
 4. Ela escolhe uma dica que combine com aquele ponto da escala.
 5. O grupo discute e move o ponteiro.
 6. Revele o alvo, some os pontos e troque a pessoa da vez.
 
-Use `Sortear pontuacao` para manter a posicao escondida do grupo. O ajuste
-manual fica oculto por padrao porque a posicao do controle entrega a resposta.
+Use `Sortear pontuação` para manter a posição escondida do grupo. O ajuste
+manual fica oculto por padrão porque a posição do controle entrega a resposta.
 
 ## Pontuacao
 
-- 4 pontos: distancia de 0 a 2 do centro da janela
-- 3 pontos: distancia de 3 a 5 do alvo
-- 2 pontos: distancia de 6 a 8 do alvo
-- 1 ponto: distancia de 9 a 12 do alvo
+- 4 pontos: distância de 0 a 2 do centro da janela
+- 3 pontos: distância de 3 a 5 do alvo
+- 2 pontos: distância de 6 a 8 do alvo
+- 1 ponto: distância de 9 a 12 do alvo
 - 0 pontos: qualquer palpite mais distante
 
 ## Rodar localmente

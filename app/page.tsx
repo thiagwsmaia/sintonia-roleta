@@ -15,56 +15,56 @@ type Round = {
 };
 
 const cards: Card[] = [
-  { theme: "Filme", left: "Filme bom", right: "Filme ruim", ideas: ["Titanic", "Velozes e Furiosos 9", "Shrek", "Cats", "Barbie", "Crepusculo"] },
-  { theme: "Traicao", left: "Quase nada", right: "Imperdoavel", ideas: ["Curtir foto antiga", "Apagar conversa", "Beijar outra pessoa", "Ter app de namoro", "Mentir sobre rolê", "Dormir na casa do ex"] },
-  { theme: "Vergonha alheia", left: "Fofo", right: "Sumir da cidade", ideas: ["Mandar audio errado", "Cair na festa", "Chamar a professora de mãe", "Dançar sozinho", "Errar parabens", "Falar alto no cinema"] },
-  { theme: "Gasto sem noção", left: "Investimento", right: "Falencia emocional", ideas: ["Delivery caro", "Skin de jogo", "Ingresso VIP", "Air fryer nova", "Curso que nunca abre", "Uber de 3 quadras"] },
-  { theme: "Crime contra amizade", left: "Perdoavel", right: "Fim do grupo", ideas: ["Demorar pra responder", "Furar rolê", "Ver episodio sem a pessoa", "Vazar segredo", "Sumir no aniversario", "Nao defender no grupo"] },
-  { theme: "Maturidade", left: "Ainda caos", right: "Adulto premium", ideas: ["Lavar louça na hora", "Pedir desculpa direito", "Guardar dinheiro", "Marcar medico", "Ler contrato", "Dormir cedo"] },
-  { theme: "Drama de familia", left: "Tranquilo", right: "Ceia cancelada", ideas: ["Opinar no cabelo", "Comparar primos", "Falar de politica", "Perguntar namoro", "Criticar comida", "Lembrar heranca"] },
-  { theme: "Coragem", left: "Medinho", right: "Sem amor a vida", ideas: ["Cantar karaoke", "Pedir aumento", "Mandar mensagem pro crush", "Fazer stand-up", "Pular de paraquedas", "Cortar o cabelo radical"] },
-  { theme: "Comida", left: "Delicia", right: "Crime culinario", ideas: ["Pizza de abacaxi", "Sushi quente", "Ketchup na pizza", "Strogonoff", "Feijao doce", "Queijo em tudo"] },
+  { theme: "Filme", left: "Filme bom", right: "Filme ruim", ideas: ["Titanic", "Velozes e Furiosos 9", "Shrek", "Cats", "Barbie", "Crepúsculo"] },
+  { theme: "Traição", left: "Quase nada", right: "Imperdoável", ideas: ["Curtir foto antiga", "Apagar conversa", "Beijar outra pessoa", "Ter app de namoro", "Mentir sobre rolê", "Dormir na casa do ex"] },
+  { theme: "Vergonha alheia", left: "Fofo", right: "Sumir da cidade", ideas: ["Mandar áudio errado", "Cair na festa", "Chamar a professora de mãe", "Dançar sozinho", "Errar parabéns", "Falar alto no cinema"] },
+  { theme: "Gasto sem noção", left: "Investimento", right: "Falência emocional", ideas: ["Delivery caro", "Skin de jogo", "Ingresso VIP", "Air fryer nova", "Curso que nunca abre", "Uber de 3 quadras"] },
+  { theme: "Crime contra amizade", left: "Perdoável", right: "Fim do grupo", ideas: ["Demorar pra responder", "Furar rolê", "Ver episódio sem a pessoa", "Vazar segredo", "Sumir no aniversário", "Não defender no grupo"] },
+  { theme: "Maturidade", left: "Ainda caos", right: "Adulto premium", ideas: ["Lavar louça na hora", "Pedir desculpa direito", "Guardar dinheiro", "Marcar médico", "Ler contrato", "Dormir cedo"] },
+  { theme: "Drama de família", left: "Tranquilo", right: "Ceia cancelada", ideas: ["Opinar no cabelo", "Comparar primos", "Falar de política", "Perguntar namoro", "Criticar comida", "Lembrar herança"] },
+  { theme: "Coragem", left: "Medinho", right: "Sem amor à vida", ideas: ["Cantar karaokê", "Pedir aumento", "Mandar mensagem pro crush", "Fazer stand-up", "Pular de paraquedas", "Cortar o cabelo radical"] },
+  { theme: "Comida", left: "Delícia", right: "Crime culinário", ideas: ["Pizza de abacaxi", "Sushi quente", "Ketchup na pizza", "Strogonoff", "Feijão doce", "Queijo em tudo"] },
   { theme: "Primeiro encontro", left: "Fofo", right: "Alerta vermelho", ideas: ["Levar flor", "Falar do ex", "Dividir conta", "Chegar atrasado", "Escolher cinema", "Pedir casamento"] },
-  { theme: "Mensagem", left: "Educada", right: "Passivo-agressiva", ideas: ["Ok.", "Bom dia sumido", "A gente conversa depois", "Kkk", "Como voce quiser", "Visualizou e sumiu"] },
+  { theme: "Mensagem", left: "Educada", right: "Passivo-agressiva", ideas: ["Ok.", "Bom dia, sumido", "A gente conversa depois", "Kkk", "Como você quiser", "Visualizou e sumiu"] },
   { theme: "Presente", left: "Perfeito", right: "Constrangedor", ideas: ["Livro", "Meia", "Perfume forte", "Vale-presente", "Dinheiro", "Panela"] },
-  { theme: "Musica", left: "Obra-prima", right: "Pular agora", ideas: ["Evidencias", "Baby Shark", "Anitta", "Bohemian Rhapsody", "Pagode antigo", "Jingle de loja"] },
-  { theme: "Festa", left: "Rolê lendario", right: "Ir embora cedo", ideas: ["Open bar", "Fila enorme", "DJ bom", "Som estourado", "Ex no local", "Sem banheiro"] },
-  { theme: "Pessoa famosa", left: "Querida", right: "Cancelavel", ideas: ["Keanu Reeves", "Neymar", "Taylor Swift", "Elon Musk", "Influencer fitness", "Apresentador antigo"] },
+  { theme: "Música", left: "Obra-prima", right: "Pular agora", ideas: ["Evidências", "Baby Shark", "Anitta", "Bohemian Rhapsody", "Pagode antigo", "Jingle de loja"] },
+  { theme: "Festa", left: "Rolê lendário", right: "Ir embora cedo", ideas: ["Open bar", "Fila enorme", "DJ bom", "Som estourado", "Ex no local", "Sem banheiro"] },
+  { theme: "Pessoa famosa", left: "Querida", right: "Cancelável", ideas: ["Keanu Reeves", "Neymar", "Taylor Swift", "Elon Musk", "Influencer fitness", "Apresentador antigo"] },
   { theme: "Aplicativo", left: "Essencial", right: "Desinstalar", ideas: ["WhatsApp", "TikTok", "LinkedIn", "Uber", "Tinder", "App de banco"] },
-  { theme: "Superpoder", left: "Incrivel", right: "Inutil", ideas: ["Voar", "Ler mentes", "Ficar invisivel", "Falar com peixe", "Dormir rapido", "Achar controle remoto"] },
-  { theme: "Desculpa", left: "Aceitavel", right: "Ninguem acredita", ideas: ["Transito", "Bateria acabou", "Cachorro comeu", "Dormi sem querer", "Tive reunião", "Esqueci total"] },
-  { theme: "Vilao", left: "Tem razao", right: "Maldade pura", ideas: ["Thanos", "Scar", "Darth Vader", "Coringa", "Miranda Priestly", "Regina George"] },
-  { theme: "Herói", left: "Inspirador", right: "Insuportavel", ideas: ["Batman", "Homem de Ferro", "Superman", "Capitao America", "Shrek", "Harry Potter"] },
-  { theme: "Moda", left: "Estiloso", right: "Nao da", ideas: ["Crocs", "Calça skinny", "Pochete", "Oculos Juliet", "Look all black", "Chinelo com meia"] },
-  { theme: "Casa", left: "Aconchegante", right: "Caotica", ideas: ["Planta na sala", "Louça na pia", "Cheiro de café", "Cama sem lençol", "Banheiro molhado", "Luz branca"] },
-  { theme: "Viagem", left: "Sonho", right: "Perrengue", ideas: ["Praia vazia", "Hostel barato", "Mala perdida", "Chuva todo dia", "Upgrade gratis", "Voo de madrugada"] },
-  { theme: "Trabalho", left: "Profissional", right: "Pedir demissao", ideas: ["Reunião curta", "Chefe no WhatsApp", "Planilha linda", "Feedback surpresa", "Happy hour obrigatorio", "Sistema fora"] },
-  { theme: "Escola", left: "Nostalgia", right: "Trauma", ideas: ["Recreio", "Prova oral", "Educação fisica", "Trabalho em grupo", "Chamada", "Feira de ciencias"] },
-  { theme: "Bebida", left: "Perfeita", right: "Arrependimento", ideas: ["Agua gelada", "Caipirinha", "Energético", "Suco detox", "Cerveja quente", "Cafe sem açucar"] },
+  { theme: "Superpoder", left: "Incrível", right: "Inútil", ideas: ["Voar", "Ler mentes", "Ficar invisível", "Falar com peixe", "Dormir rápido", "Achar controle remoto"] },
+  { theme: "Desculpa", left: "Aceitável", right: "Ninguém acredita", ideas: ["Trânsito", "Bateria acabou", "Cachorro comeu", "Dormi sem querer", "Tive reunião", "Esqueci total"] },
+  { theme: "Vilão", left: "Tem razão", right: "Maldade pura", ideas: ["Thanos", "Scar", "Darth Vader", "Coringa", "Miranda Priestly", "Regina George"] },
+  { theme: "Herói", left: "Inspirador", right: "Insuportável", ideas: ["Batman", "Homem de Ferro", "Superman", "Capitão América", "Shrek", "Harry Potter"] },
+  { theme: "Moda", left: "Estiloso", right: "Não dá", ideas: ["Crocs", "Calça skinny", "Pochete", "Óculos Juliet", "Look all black", "Chinelo com meia"] },
+  { theme: "Casa", left: "Aconchegante", right: "Caótica", ideas: ["Planta na sala", "Louça na pia", "Cheiro de café", "Cama sem lençol", "Banheiro molhado", "Luz branca"] },
+  { theme: "Viagem", left: "Sonho", right: "Perrengue", ideas: ["Praia vazia", "Hostel barato", "Mala perdida", "Chuva todo dia", "Upgrade grátis", "Voo de madrugada"] },
+  { theme: "Trabalho", left: "Profissional", right: "Pedir demissão", ideas: ["Reunião curta", "Chefe no WhatsApp", "Planilha linda", "Feedback surpresa", "Happy hour obrigatório", "Sistema fora"] },
+  { theme: "Escola", left: "Nostalgia", right: "Trauma", ideas: ["Recreio", "Prova oral", "Educação física", "Trabalho em grupo", "Chamada", "Feira de ciências"] },
+  { theme: "Bebida", left: "Perfeita", right: "Arrependimento", ideas: ["Água gelada", "Caipirinha", "Energético", "Suco detox", "Cerveja quente", "Café sem açúcar"] },
   { theme: "Animal de estimação", left: "Anjo", right: "Terror da casa", ideas: ["Dormir no colo", "Comer chinelo", "Derrubar vaso", "Pedir carinho", "Latir 3h", "Roubar comida"] },
-  { theme: "Reality show", left: "Entretenimento puro", right: "Vergonha nacional", ideas: ["BBB treta", "Prova de resistencia", "Casal fake", "Votação surpresa", "Barraco ao vivo", "Eliminação injusta"] },
-  { theme: "Esporte", left: "Lindo de ver", right: "Sofrimento", ideas: ["Gol no final", "VAR", "Penalty perdido", "Virada historica", "0 a 0", "Torcida cantando"] },
-  { theme: "Tecnologia", left: "Revolucionaria", right: "So complica", ideas: ["Pix", "Senha facial", "Chatbot", "Smartwatch", "Geladeira smart", "Atualização obrigatoria"] },
-  { theme: "Grupo de WhatsApp", left: "Util", right: "Silenciar pra sempre", ideas: ["Grupo da familia", "Grupo do predio", "Memes", "Bom dia com flor", "Audio de 5 min", "Aviso importante"] },
-  { theme: "Transporte", left: "Confortavel", right: "Teste de paciencia", ideas: ["Metro vazio", "Onibus lotado", "Carona boa", "Moto app", "Voo com criança", "Trem atrasado"] },
-  { theme: "Banheiro publico", left: "Aceitavel", right: "Zona de guerra", ideas: ["Shopping", "Posto de estrada", "Aeroporto", "Bar lotado", "Praia", "Casa de amigo"] },
-  { theme: "Cafe da manha", left: "Perfeito", right: "Triste", ideas: ["Pão quente", "Fruta", "Cereal murcho", "Cafe frio", "Hotel buffet", "Bolacha agua e sal"] },
-  { theme: "Mentira", left: "Inofensiva", right: "Muito grave", ideas: ["Gostei do presente", "Ja estou chegando", "Li os termos", "Estou bem", "Nao vi sua mensagem", "Nunca fiz isso"] },
+  { theme: "Reality show", left: "Entretenimento puro", right: "Vergonha nacional", ideas: ["BBB treta", "Prova de resistência", "Casal fake", "Votação surpresa", "Barraco ao vivo", "Eliminação injusta"] },
+  { theme: "Esporte", left: "Lindo de ver", right: "Sofrimento", ideas: ["Gol no final", "VAR", "Pênalti perdido", "Virada histórica", "0 a 0", "Torcida cantando"] },
+  { theme: "Tecnologia", left: "Revolucionária", right: "Só complica", ideas: ["Pix", "Senha facial", "Chatbot", "Smartwatch", "Geladeira smart", "Atualização obrigatória"] },
+  { theme: "Grupo de WhatsApp", left: "Útil", right: "Silenciar pra sempre", ideas: ["Grupo da família", "Grupo do prédio", "Memes", "Bom dia com flor", "Áudio de 5 min", "Aviso importante"] },
+  { theme: "Transporte", left: "Confortável", right: "Teste de paciência", ideas: ["Metrô vazio", "Ônibus lotado", "Carona boa", "Moto app", "Voo com criança", "Trem atrasado"] },
+  { theme: "Banheiro público", left: "Aceitável", right: "Zona de guerra", ideas: ["Shopping", "Posto de estrada", "Aeroporto", "Bar lotado", "Praia", "Casa de amigo"] },
+  { theme: "Café da manhã", left: "Perfeito", right: "Triste", ideas: ["Pão quente", "Fruta", "Cereal murcho", "Café frio", "Hotel buffet", "Bolacha água e sal"] },
+  { theme: "Mentira", left: "Inofensiva", right: "Muito grave", ideas: ["Gostei do presente", "Já estou chegando", "Li os termos", "Estou bem", "Não vi sua mensagem", "Nunca fiz isso"] },
   { theme: "Pix", left: "Justo", right: "Abusivo", ideas: ["R$ 2", "R$ 17,43", "Dividir gasolina", "Cobrar bala", "Conta do date", "Presente coletivo"] },
-  { theme: "Sogra", left: "Parceira", right: "Chefona final", ideas: ["Levar comida", "Opinar na casa", "Ligar todo dia", "Defender voce", "Comparar ex", "Aparecer sem avisar"] },
+  { theme: "Sogra", left: "Parceira", right: "Chefona final", ideas: ["Levar comida", "Opinar na casa", "Ligar todo dia", "Defender você", "Comparar ex", "Aparecer sem avisar"] },
   { theme: "Criança", left: "Uma graça", right: "Caos absoluto", ideas: ["Fantasia fofa", "Birra no mercado", "Pergunta sincera", "Desenho na parede", "Riso contagiante", "Choro no avião"] },
   { theme: "Cabelo", left: "Transformação", right: "Arrependimento", ideas: ["Franja", "Loiro platinado", "Raspar", "Cortar em casa", "Hidratação", "Tinta fantasia"] },
-  { theme: "Academia", left: "Saudavel", right: "Humilhação publica", ideas: ["Esteira", "Agachamento", "Selfie no espelho", "Personal gritando", "Primeira aula", "Esquecer toalha"] },
-  { theme: "Decoracao", left: "Chique", right: "Casa de terror", ideas: ["Luz quente", "Quadro abstrato", "Tapete peludo", "Parede cinza", "Muitos espelhos", "Enfeite de porcelana"] },
+  { theme: "Academia", left: "Saudável", right: "Humilhação pública", ideas: ["Esteira", "Agachamento", "Selfie no espelho", "Personal gritando", "Primeira aula", "Esquecer toalha"] },
+  { theme: "Decoração", left: "Chique", right: "Casa de terror", ideas: ["Luz quente", "Quadro abstrato", "Tapete peludo", "Parede cinza", "Muitos espelhos", "Enfeite de porcelana"] },
   { theme: "Internet antiga", left: "Saudade", right: "Ainda bem que acabou", ideas: ["MSN", "Orkut", "Depoimento", "Lan house", "Foto com glitter", "Corrente de email"] },
   { theme: "Nome de bebê", left: "Lindo", right: "Processo futuro", ideas: ["Alice", "Enzo", "Thor", "Valentina", "Kayky", "Princesa"] },
-  { theme: "Tatuagem", left: "Arte", right: "Laser urgente", ideas: ["Nome do amor", "Frase em ingles", "Estrela", "Pet", "Codigo de barras", "Desenho autoral"] },
-  { theme: "Pedido de desculpas", left: "Maduro", right: "Piorou tudo", ideas: ["Foi mal se voce se ofendeu", "Eu errei", "Mas voce tambem", "Comprei chocolate", "Sumir por dias", "Texto enorme"] },
-  { theme: "Morar junto", left: "Romantico", right: "Teste final", ideas: ["Dividir aluguel", "Louça", "Escolher sofá", "Conta conjunta", "Ronco", "Faxina de domingo"] },
+  { theme: "Tatuagem", left: "Arte", right: "Laser urgente", ideas: ["Nome do amor", "Frase em inglês", "Estrela", "Pet", "Código de barras", "Desenho autoral"] },
+  { theme: "Pedido de desculpas", left: "Maduro", right: "Piorou tudo", ideas: ["Foi mal se você se ofendeu", "Eu errei", "Mas você também", "Comprei chocolate", "Sumir por dias", "Texto enorme"] },
+  { theme: "Morar junto", left: "Romântico", right: "Teste final", ideas: ["Dividir aluguel", "Louça", "Escolher sofá", "Conta conjunta", "Ronco", "Faxina de domingo"] },
   { theme: "Objeto perdido", left: "Tanto faz", right: "Desespero", ideas: ["Caneta", "Chave", "Celular", "Documento", "Fone esquerdo", "Aliança"] },
-  { theme: "Cheiro", left: "Maravilhoso", right: "Evacuar", ideas: ["Pão assando", "Gasolina", "Perfume doce", "Chulé", "Chuva", "Comida no microondas"] },
-  { theme: "Som", left: "Agradavel", right: "Insuportavel", ideas: ["Chuva", "Unha no quadro", "Notificação", "Risada alta", "Obra cedo", "Pipoca estourando"] },
-  { theme: "Habilidade social", left: "Carismatico", right: "Sem condição", ideas: ["Puxar assunto", "Cortar alguem", "Dar feedback", "Fazer brinde", "Sair sem despedir", "Lembrar nome"] },
+  { theme: "Cheiro", left: "Maravilhoso", right: "Evacuar", ideas: ["Pão assando", "Gasolina", "Perfume doce", "Chulé", "Chuva", "Comida no micro-ondas"] },
+  { theme: "Som", left: "Agradável", right: "Insuportável", ideas: ["Chuva", "Unha no quadro", "Notificação", "Risada alta", "Obra cedo", "Pipoca estourando"] },
+  { theme: "Habilidade social", left: "Carismático", right: "Sem condição", ideas: ["Puxar assunto", "Cortar alguém", "Dar feedback", "Fazer brinde", "Sair sem despedir", "Lembrar nome"] },
 ];
 
 const scoreBands = [
@@ -188,7 +188,7 @@ export default function Home() {
             <p className="eyebrow">jogo de mesa local</p>
             <h1>Sintonia Roleta</h1>
           </div>
-          <div className="score-pill" aria-label={`Pontuacao total ${score}`}>
+          <div className="score-pill" aria-label={`Pontuação total ${score}`}>
             <span>{score}</span>
             pontos
           </div>
@@ -285,7 +285,7 @@ export default function Home() {
               </button>
               {manualTargetOpen ? (
                 <input
-                  aria-label="Definir centro da pontuacao maxima"
+                aria-label="Definir centro da pontuação máxima"
                   type="range"
                   min="6"
                   max="94"
@@ -295,7 +295,7 @@ export default function Home() {
                 />
               ) : null}
               <small>
-                Use o sorteio para manter a posicao escondida. Segure para o
+                Use o sorteio para manter a posição escondida. Segure para o
                 mestre ver a janela colorida na roleta.
               </small>
             </div>
@@ -362,13 +362,13 @@ export default function Home() {
           </section>
 
           <aside className="result-panel">
-            <p className="eyebrow">regioes de pontuação</p>
+            <p className="eyebrow">regiões de pontuação</p>
             <div className="score-bands">
               {scoreBands.map((band) => (
                 <div className={`score-band band-${band.points}`} key={band.points}>
                   <strong>{band.points}</strong>
                   <span>{band.label}</span>
-                  <small>{band.range} de distancia</small>
+                  <small>{band.range} de distância</small>
                 </div>
               ))}
             </div>
@@ -385,7 +385,7 @@ export default function Home() {
               ) : (
                 <>
                   <strong>{peeking ? "O mestre esta vendo" : "Alvo escondido"}</strong>
-                  <span>defina a faixa maxima, segure para conferir e solte antes do grupo palpitar.</span>
+                  <span>defina a faixa máxima, segure para conferir e solte antes do grupo palpitar.</span>
                 </>
               )}
             </div>
@@ -399,7 +399,7 @@ export default function Home() {
       <section className="rules-band" aria-label="Fluxo da rodada">
         <div>
           <span>1</span>
-          <p>O mestre escolhe onde fica a faixa maxima e prepara a dica.</p>
+          <p>O mestre escolhe onde fica a faixa máxima e prepara a dica.</p>
         </div>
         <div>
           <span>2</span>
