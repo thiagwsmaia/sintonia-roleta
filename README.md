@@ -8,9 +8,10 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 
 1. Abra uma nova rodada.
 2. A pessoa da vez usa a Area do mestre para definir onde fica a faixa maxima.
-3. Ela escolhe uma dica que combine com aquele ponto da escala.
-4. O grupo discute e move o ponteiro.
-5. Revele o alvo, some os pontos e troque a pessoa da vez.
+3. Edite os dois extremos da escala se quiser adaptar o tema da rodada.
+4. Ela escolhe uma dica que combine com aquele ponto da escala.
+5. O grupo discute e move o ponteiro.
+6. Revele o alvo, some os pontos e troque a pessoa da vez.
 
 ## Pontuacao
 

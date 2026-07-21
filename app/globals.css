@@ -59,8 +59,8 @@ input:disabled {
 }
 
 .hero-band {
-  min-height: 82vh;
-  padding: 24px;
+  min-height: 100vh;
+  padding: 18px;
 }
 
 .topbar {
@@ -68,7 +68,7 @@ input:disabled {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 14px;
-  max-width: 1180px;
+  max-width: 1680px;
   margin: 0 auto 24px;
 }
 
@@ -132,10 +132,10 @@ h2 {
 
 .stage {
   display: grid;
-  grid-template-columns: minmax(240px, 0.92fr) minmax(380px, 1.28fr) minmax(240px, 0.8fr);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(520px, 1.45fr) minmax(270px, 0.72fr);
   gap: 18px;
   align-items: stretch;
-  max-width: 1180px;
+  max-width: 1680px;
   margin: 0 auto;
 }
 
@@ -144,22 +144,33 @@ h2 {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 12px;
   align-items: center;
-  max-width: 980px;
+  max-width: 1500px;
   margin: 0 auto 18px;
   color: #ffffff;
   text-shadow: 2px 2px 0 rgba(21, 26, 31, 0.94);
 }
 
-.prompt-strip strong {
+.prompt-strip input {
   display: block;
+  width: 100%;
   min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
   font-size: clamp(1.45rem, 4vw, 3.1rem);
   font-weight: 950;
   line-height: 0.96;
+  outline: none;
+  text-shadow: 2px 2px 0 rgba(21, 26, 31, 0.94);
 }
 
-.prompt-strip strong:last-child {
+.prompt-strip input:last-child {
   text-align: right;
+}
+
+.prompt-strip input:focus {
+  border-radius: 8px;
+  box-shadow: inset 0 -5px 0 rgba(239, 107, 91, 0.42);
 }
 
 .prompt-strip span {
@@ -211,7 +222,9 @@ h2 {
   margin-bottom: 18px;
 }
 
-.scale-labels span {
+.scale-labels label {
+  display: grid;
+  gap: 6px;
   min-height: 44px;
   padding: 10px;
   border: 2px solid rgba(21, 26, 31, 0.16);
@@ -220,9 +233,29 @@ h2 {
   font-weight: 800;
 }
 
-.scale-labels span:last-child {
+.scale-labels label:last-child {
   background: #f7d8d2;
   text-align: right;
+}
+
+.scale-labels label span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.scale-labels input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 900;
+  outline: none;
+}
+
+.scale-labels input:focus {
+  box-shadow: inset 0 -3px 0 rgba(31, 119, 180, 0.32);
 }
 
 .idea-stack {
@@ -331,7 +364,7 @@ h2 {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 440px;
+  min-height: min(64vh, 650px);
 }
 
 .side-label {
@@ -360,7 +393,7 @@ h2 {
 
 .dial-face {
   position: relative;
-  width: min(100%, 430px);
+  width: min(100%, 620px, 62vh);
   aspect-ratio: 1;
   border: 8px solid #dfe8dc;
   border-radius: 50%;
@@ -396,18 +429,18 @@ h2 {
   inset: 6%;
   border-radius: 50%;
   background: conic-gradient(
-    from 226deg,
-    transparent 0 var(--zone-1-start),
-    #7dd1bb var(--zone-1-start) var(--zone-2-start),
-    #f5c65a var(--zone-2-start) var(--zone-3-start),
-    #f58260 var(--zone-3-start) var(--zone-4-start),
-    #f6e85b var(--zone-4-start) var(--zone-4-end),
-    #f58260 var(--zone-4-end) var(--zone-3-end),
-    #f5c65a var(--zone-3-end) var(--zone-2-end),
-    #7dd1bb var(--zone-2-end) var(--zone-1-end),
-    transparent var(--zone-1-end) 100%
+    from -12deg,
+    #7dd1bb 0deg 4deg,
+    #f5c65a 4deg 7deg,
+    #f58260 7deg 10deg,
+    #f6e85b 10deg 14deg,
+    #f58260 14deg 17deg,
+    #f5c65a 17deg 20deg,
+    #7dd1bb 20deg 24deg,
+    transparent 24deg 360deg
   );
   opacity: 0;
+  transform: rotate(var(--target-angle));
   transition: opacity 180ms ease;
   -webkit-mask: radial-gradient(circle, transparent 0 49%, #000 50% 77%, transparent 78%);
   mask: radial-gradient(circle, transparent 0 49%, #000 50% 77%, transparent 78%);
@@ -419,12 +452,12 @@ h2 {
   inset: 0;
   border-radius: 50%;
   background: conic-gradient(
-    from 226deg,
-    transparent 0 var(--zone-4-start),
-    rgba(21, 26, 31, 0.38) var(--zone-4-start) calc(var(--zone-4-start) + 0.35%),
-    transparent calc(var(--zone-4-start) + 0.35%) var(--zone-4-end),
-    rgba(21, 26, 31, 0.38) var(--zone-4-end) calc(var(--zone-4-end) + 0.35%),
-    transparent calc(var(--zone-4-end) + 0.35%) 100%
+    from -12deg,
+    transparent 0deg 10deg,
+    rgba(21, 26, 31, 0.38) 10deg 10.35deg,
+    transparent 10.35deg 14deg,
+    rgba(21, 26, 31, 0.38) 14deg 14.35deg,
+    transparent 14.35deg 360deg
   );
 }
 
@@ -674,7 +707,7 @@ input[type="range"] {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  max-width: 1180px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 0 24px 32px;
 }
@@ -758,7 +791,7 @@ input[type="range"] {
   }
 
   .range-row span:last-child,
-  .prompt-strip strong:last-child {
+  .prompt-strip input:last-child {
     text-align: left;
   }
 

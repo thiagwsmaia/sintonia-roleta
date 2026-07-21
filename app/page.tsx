@@ -76,7 +76,7 @@ const scoreBands = [
 
 const initialRound: Round = {
   card: cards[0],
-  target: 72,
+  target: 50,
 };
 
 function makeRound(): Round {
@@ -84,10 +84,6 @@ function makeRound(): Round {
     card: cards[Math.floor(Math.random() * cards.length)],
     target: 50,
   };
-}
-
-function clamp(value: number) {
-  return Math.max(0, Math.min(100, value));
 }
 
 function scoreFor(distance: number) {
@@ -104,6 +100,8 @@ function angleFor(value: number) {
 
 export default function Home() {
   const [round, setRound] = useState<Round>(initialRound);
+  const [leftLabel, setLeftLabel] = useState(initialRound.card.left);
+  const [rightLabel, setRightLabel] = useState(initialRound.card.right);
   const [guess, setGuess] = useState(50);
   const [revealed, setRevealed] = useState(false);
   const [peeking, setPeeking] = useState(false);
@@ -113,52 +111,33 @@ export default function Home() {
   const [lastPoints, setLastPoints] = useState<number | null>(null);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setRound(makeRound()));
+    const frame = requestAnimationFrame(() => {
+      const next = makeRound();
+      setRound(next);
+      setLeftLabel(next.card.left);
+      setRightLabel(next.card.right);
+    });
     return () => cancelAnimationFrame(frame);
   }, []);
 
   const distance = Math.abs(guess - round.target);
   const currentPoints = scoreFor(distance);
   const showTarget = peeking || revealed;
-  const zoneOneStart = clamp(round.target - 12);
-  const zoneTwoStart = clamp(round.target - 8);
-  const zoneThreeStart = clamp(round.target - 5);
-  const zoneFourStart = clamp(round.target - 2);
-  const zoneFourEnd = clamp(round.target + 2);
-  const zoneThreeEnd = clamp(round.target + 5);
-  const zoneTwoEnd = clamp(round.target + 8);
-  const zoneOneEnd = clamp(round.target + 12);
 
   const dialStyle = useMemo(
     () =>
       ({
         "--guess-angle": `${angleFor(guess)}deg`,
         "--target-angle": `${angleFor(round.target)}deg`,
-        "--zone-1-start": `${zoneOneStart}%`,
-        "--zone-2-start": `${zoneTwoStart}%`,
-        "--zone-3-start": `${zoneThreeStart}%`,
-        "--zone-4-start": `${zoneFourStart}%`,
-        "--zone-4-end": `${zoneFourEnd}%`,
-        "--zone-3-end": `${zoneThreeEnd}%`,
-        "--zone-2-end": `${zoneTwoEnd}%`,
-        "--zone-1-end": `${zoneOneEnd}%`,
       }) as React.CSSProperties,
-    [
-      guess,
-      round.target,
-      zoneFourEnd,
-      zoneFourStart,
-      zoneOneEnd,
-      zoneOneStart,
-      zoneThreeEnd,
-      zoneThreeStart,
-      zoneTwoEnd,
-      zoneTwoStart,
-    ],
+    [guess, round.target],
   );
 
   function nextRound() {
-    setRound(makeRound());
+    const next = makeRound();
+    setRound(next);
+    setLeftLabel(next.card.left);
+    setRightLabel(next.card.right);
     setGuess(50);
     setRevealed(false);
     setPeeking(false);
@@ -199,9 +178,17 @@ export default function Home() {
         </nav>
 
         <div className="prompt-strip">
-          <strong>{round.card.left}</strong>
+          <input
+            aria-label="Editar extremo esquerdo"
+            value={leftLabel}
+            onChange={(event) => setLeftLabel(event.target.value)}
+          />
           <span>{round.card.theme}</span>
-          <strong>{round.card.right}</strong>
+          <input
+            aria-label="Editar extremo direito"
+            value={rightLabel}
+            onChange={(event) => setRightLabel(event.target.value)}
+          />
         </div>
 
         <div className="stage">
@@ -212,8 +199,20 @@ export default function Home() {
             </div>
             <h2>{round.card.theme}</h2>
             <div className="scale-labels">
-              <span>{round.card.left}</span>
-              <span>{round.card.right}</span>
+              <label>
+                <span>Extremo esquerdo</span>
+                <input
+                  value={leftLabel}
+                  onChange={(event) => setLeftLabel(event.target.value)}
+                />
+              </label>
+              <label>
+                <span>Extremo direito</span>
+                <input
+                  value={rightLabel}
+                  onChange={(event) => setRightLabel(event.target.value)}
+                />
+              </label>
             </div>
             <div className="idea-stack" aria-label="Ideias para a dica">
               {round.card.ideas.map((idea) => (
@@ -260,8 +259,8 @@ export default function Home() {
             className={`dial-card ${showTarget ? "show-zones" : ""} ${revealed ? "is-revealed" : ""}`}
           >
             <div className="dial" style={dialStyle} aria-label="Roleta de palpite">
-              <div className="side-label left-label">{round.card.left}</div>
-              <div className="side-label right-label">{round.card.right}</div>
+              <div className="side-label left-label">{leftLabel}</div>
+              <div className="side-label right-label">{rightLabel}</div>
               <div className="dial-face">
                 <div className="score-zones" />
                 <div className="privacy-shield">
@@ -281,7 +280,7 @@ export default function Home() {
             </div>
 
             <div className="range-row">
-              <span>{round.card.left}</span>
+              <span>{leftLabel}</span>
               <input
                 aria-label="Mover ponteiro"
                 type="range"
@@ -291,7 +290,7 @@ export default function Home() {
                 onChange={(event) => setGuess(Number(event.target.value))}
                 disabled={revealed}
               />
-              <span>{round.card.right}</span>
+              <span>{rightLabel}</span>
             </div>
 
             <div className="controls">
