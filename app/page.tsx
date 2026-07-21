@@ -164,9 +164,11 @@ export default function Home() {
 
   function randomizeTarget() {
     setTarget(makeTarget());
+    setGuess(50);
     setPeeking(false);
     setRevealed(false);
     setLastPoints(null);
+    setClue("");
     setManualTargetOpen(false);
   }
 
@@ -271,9 +273,8 @@ export default function Home() {
                 className="random-target-button"
                 type="button"
                 onClick={randomizeTarget}
-                disabled={revealed}
               >
-                Sortear pontuação
+                {revealed ? "Sortear nova pontuação" : "Sortear pontuação"}
               </button>
               <button
                 className="manual-target-button"
@@ -285,7 +286,7 @@ export default function Home() {
               </button>
               {manualTargetOpen ? (
                 <input
-                aria-label="Definir centro da pontuação máxima"
+                  aria-label="Definir centro da pontuação máxima"
                   type="range"
                   min="6"
                   max="94"
@@ -295,8 +296,9 @@ export default function Home() {
                 />
               ) : null}
               <small>
-                Use o sorteio para manter a posição escondida. Segure para o
-                mestre ver a janela colorida na roleta.
+                Use o sorteio para manter a posição escondida. Depois de
+                revelar, sorteie de novo para trocar só a pontuação e seguir no
+                mesmo tema.
               </small>
             </div>
           </aside>
