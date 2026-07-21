@@ -87,6 +87,10 @@ input:disabled {
   margin: 0 auto 10px;
 }
 
+.topbar > div {
+  min-width: 0;
+}
+
 .brand-mark {
   display: grid;
   width: 54px;
@@ -842,8 +846,17 @@ input[type="range"] {
 }
 
 @media (max-width: 980px) {
+  .hero-band {
+    min-height: auto;
+  }
+
+  .topbar {
+    align-items: start;
+  }
+
   .stage {
     grid-template-columns: 1fr;
+    max-width: 760px;
   }
 
   .round-panel,
@@ -861,48 +874,350 @@ input[type="range"] {
   .dial {
     min-height: auto;
   }
+
+  .dial-card {
+    order: -1;
+  }
 }
 
 @media (max-width: 680px) {
+  html {
+    scroll-padding-top: 8px;
+  }
+
   .hero-band {
-    padding: 16px;
+    display: block;
+    padding: 10px;
   }
 
   .topbar {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.9);
+    font-size: 0.82rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 3px;
+    font-size: 0.62rem;
+  }
+
+  h1 {
+    font-size: 1.34rem;
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    font-size: 1.8rem;
   }
 
   .score-pill {
     grid-column: 1 / -1;
     justify-self: start;
+    min-width: 72px;
+    padding: 5px 8px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.86);
+    font-size: 0.72rem;
+  }
+
+  .score-pill span {
+    font-size: 1.08rem;
+  }
+
+  .prompt-strip {
+    display: none;
+  }
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stage > * {
+    width: 100%;
+    min-width: 0;
   }
 
   .round-panel,
   .result-panel {
     grid-template-columns: 1fr;
+    padding: 11px;
+    overflow: visible;
   }
 
   .dial-card {
-    padding: 16px;
+    gap: 9px;
+    padding: 10px;
+    order: -1;
   }
 
-  .range-row,
-  .controls,
-  .prompt-strip,
-  .rules-band {
-    grid-template-columns: 1fr;
+  .dial {
+    min-height: 0;
+    overflow: hidden;
   }
 
-  .range-row span:last-child,
-  .prompt-strip input:last-child {
-    text-align: left;
+  .dial-face {
+    width: min(100%, 400px, calc(100vw - 72px));
+    border-width: 6px;
+    box-shadow:
+      inset 0 0 0 2px rgba(21, 26, 31, 0.8),
+      inset 0 0 0 12px rgba(255, 250, 240, 0.46),
+      0 6px 0 rgba(21, 26, 31, 0.26);
+  }
+
+  .dial-face::before {
+    inset: 13%;
   }
 
   .side-label {
     display: none;
   }
 
+  .privacy-shield {
+    width: 49%;
+    height: 36%;
+    padding-bottom: 10px;
+    border-width: 2px;
+    border-radius: 5px 5px 18px 18px;
+  }
+
+  .privacy-shield span {
+    max-width: 88%;
+    padding: 5px 7px;
+    font-size: 0.58rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .hub {
+    width: 86px;
+    height: 86px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.86);
+  }
+
+  .hub span {
+    font-size: 1.68rem;
+  }
+
+  .hub small {
+    font-size: 0.62rem;
+  }
+
+  .needle {
+    width: 5px;
+    height: 36%;
+  }
+
+  .target-needle {
+    width: 2px;
+  }
+
+  .range-row,
+  .controls,
+  .rules-band {
+    grid-template-columns: 1fr;
+  }
+
+  .range-row {
+    gap: 7px;
+    font-size: 0.76rem;
+  }
+
+  .range-row span,
+  .range-row span:last-child {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  input[type="range"] {
+    min-height: 30px;
+  }
+
+  .controls {
+    gap: 7px;
+  }
+
+  .primary-button,
+  .ghost-button,
+  .peek-button {
+    min-height: 48px;
+    font-size: 0.94rem;
+    overflow-wrap: anywhere;
+  }
+
+  .panel-head {
+    align-items: start;
+  }
+
+  .panel-head span {
+    white-space: nowrap;
+  }
+
+  .theme-field input {
+    font-size: 1.85rem;
+  }
+
+  .scale-labels {
+    grid-template-columns: 1fr;
+  }
+
+  .scale-labels label:last-child {
+    text-align: left;
+  }
+
+  .idea-stack {
+    max-height: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .idea-stack button {
+    min-height: 38px;
+    padding: 7px 8px;
+    overflow-wrap: anywhere;
+    font-size: 0.88rem;
+  }
+
+  .clue-box input {
+    min-height: 46px;
+  }
+
+  .master-box {
+    padding: 9px;
+  }
+
+  .master-box div {
+    padding: 7px 9px;
+  }
+
+  .master-box span {
+    font-size: 0.68rem;
+  }
+
+  .master-box strong {
+    font-size: 1.55rem;
+  }
+
+  .random-target-button,
+  .manual-target-button {
+    min-height: 46px;
+  }
+
+  .result-panel {
+    gap: 9px;
+  }
+
+  .score-bands {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+
+  .score-band {
+    grid-template-columns: 34px 1fr;
+    gap: 1px 7px;
+    padding: 6px;
+  }
+
+  .score-band strong {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .score-band span {
+    font-size: 0.82rem;
+  }
+
+  .score-band small {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+
+  .target-readout {
+    margin: 4px 0;
+    font-size: 3.2rem;
+  }
+
+  .result-copy {
+    margin-top: 6px;
+  }
+
+  .result-copy strong {
+    font-size: 1.08rem;
+  }
+
+  .result-copy span,
+  .last-score,
+  .master-box small {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
   .rules-band {
     padding: 0 16px 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-band {
+    padding: 8px;
+  }
+
+  .topbar {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 0.72rem;
+  }
+
+  h1 {
+    font-size: 1.12rem;
+  }
+
+  .score-pill {
+    min-width: 64px;
+    padding: 4px 6px;
+  }
+
+  .dial-card {
+    padding: 8px;
+  }
+
+  .dial-face {
+    width: min(100%, 360px, calc(100vw - 76px));
+    border-width: 5px;
+  }
+
+  .hub {
+    width: 76px;
+    height: 76px;
+  }
+
+  .hub span {
+    font-size: 1.48rem;
+  }
+
+  .privacy-shield span {
+    font-size: 0.52rem;
+  }
+
+  .score-bands {
+    grid-template-columns: 1fr;
   }
 }
