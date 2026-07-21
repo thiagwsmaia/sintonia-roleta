@@ -7,7 +7,7 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 ## Como jogar
 
 1. Abra uma nova rodada.
-2. A pessoa da vez usa a Area do mestre para definir onde fica a faixa maxima.
+2. A pessoa da vez gira a janela secreta para definir onde fica a faixa maxima.
 3. Edite os dois extremos da escala se quiser adaptar o tema da rodada.
 4. Ela escolhe uma dica que combine com aquele ponto da escala.
 5. O grupo discute e move o ponteiro.
@@ -15,7 +15,7 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 
 ## Pontuacao
 
-- 4 pontos: distancia de 0 a 2 do alvo
+- 4 pontos: distancia de 0 a 2 do centro da janela
 - 3 pontos: distancia de 3 a 5 do alvo
 - 2 pontos: distancia de 6 a 8 do alvo
 - 1 ponto: distancia de 9 a 12 do alvo

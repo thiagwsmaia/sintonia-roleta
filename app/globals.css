@@ -345,6 +345,10 @@ h2 {
   line-height: 1;
 }
 
+.master-box input[type="range"] {
+  accent-color: var(--ink);
+}
+
 .master-box small {
   padding: 8px 10px;
   border-radius: 6px;
@@ -426,24 +430,26 @@ h2 {
 
 .score-zones {
   position: absolute;
-  inset: 6%;
+  z-index: 4;
+  inset: 0;
   border-radius: 50%;
   background: conic-gradient(
-    from -12deg,
-    #7dd1bb 0deg 4deg,
-    #f5c65a 4deg 7deg,
-    #f58260 7deg 10deg,
-    #f6e85b 10deg 14deg,
-    #f58260 14deg 17deg,
-    #f5c65a 17deg 20deg,
-    #7dd1bb 20deg 24deg,
-    transparent 24deg 360deg
+    from -16deg,
+    transparent 0deg 3deg,
+    #78cdb7 3deg 7deg,
+    #f3bd4b 7deg 10deg,
+    #f16d54 10deg 13deg,
+    #fff05b 13deg 19deg,
+    #f16d54 19deg 22deg,
+    #f3bd4b 22deg 25deg,
+    #78cdb7 25deg 29deg,
+    transparent 29deg 360deg
   );
   opacity: 0;
   transform: rotate(var(--target-angle));
   transition: opacity 180ms ease;
-  -webkit-mask: radial-gradient(circle, transparent 0 49%, #000 50% 77%, transparent 78%);
-  mask: radial-gradient(circle, transparent 0 49%, #000 50% 77%, transparent 78%);
+  -webkit-mask: radial-gradient(circle, transparent 0 18%, #000 19% 88%, transparent 89%);
+  mask: radial-gradient(circle, transparent 0 18%, #000 19% 88%, transparent 89%);
 }
 
 .score-zones::after {
@@ -452,12 +458,12 @@ h2 {
   inset: 0;
   border-radius: 50%;
   background: conic-gradient(
-    from -12deg,
-    transparent 0deg 10deg,
-    rgba(21, 26, 31, 0.38) 10deg 10.35deg,
-    transparent 10.35deg 14deg,
-    rgba(21, 26, 31, 0.38) 14deg 14.35deg,
-    transparent 14.35deg 360deg
+    from -16deg,
+    transparent 0deg 12.8deg,
+    rgba(21, 26, 31, 0.48) 12.8deg 13.15deg,
+    transparent 13.15deg 18.85deg,
+    rgba(21, 26, 31, 0.48) 18.85deg 19.2deg,
+    transparent 19.2deg 360deg
   );
 }
 
@@ -469,7 +475,7 @@ h2 {
   position: absolute;
   left: 50%;
   bottom: 9%;
-  z-index: 3;
+  z-index: 6;
   display: grid;
   width: 48%;
   height: 38%;
@@ -482,6 +488,16 @@ h2 {
     linear-gradient(120deg, rgba(255, 255, 255, 0.13), transparent 34%),
     #173044;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+  transition:
+    height 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.show-zones .privacy-shield {
+  height: 18%;
+  opacity: 0.28;
+  transform: translateX(-50%) translateY(16%);
 }
 
 .privacy-shield span {
@@ -496,7 +512,7 @@ h2 {
 
 .needle {
   position: absolute;
-  z-index: 5;
+  z-index: 8;
   left: 50%;
   bottom: 50%;
   width: 6px;
@@ -512,8 +528,8 @@ h2 {
 }
 
 .target-needle {
-  width: 4px;
-  background: #e33228;
+  width: 3px;
+  background: rgba(21, 26, 31, 0.58);
   opacity: 0;
   transform: translateX(-50%) rotate(var(--target-angle));
 }

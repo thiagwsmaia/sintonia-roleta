@@ -236,7 +236,7 @@ export default function Home() {
             </label>
             <div className="master-box">
               <div>
-                <span>Área do mestre</span>
+                <span>Girar a janela secreta</span>
                 <strong>{round.target}</strong>
               </div>
               <input
@@ -249,8 +249,8 @@ export default function Home() {
                 disabled={revealed}
               />
               <small>
-                Posicione onde fica o centro amarelo de 4 pontos. O grupo so ve
-                quando voce segurar para mostrar ou revelar.
+                Gire ate a janela colorida ficar onde voce quer. Ao segurar, a
+                tampa sai da frente e mostra as fatias de pontuacao na roleta.
               </small>
             </div>
           </aside>
@@ -265,9 +265,9 @@ export default function Home() {
                 <div className="score-zones" />
                 <div className="privacy-shield">
                   {showTarget ? (
-                    <span>{revealed ? "revelado" : "mestre vendo"}</span>
+                    <span>{revealed ? "pontuação revelada" : "tampa levantada"}</span>
                   ) : (
-                    <span>alvo escondido</span>
+                    <span>pontuação escondida</span>
                   )}
                 </div>
                 <div className="needle target-needle" />

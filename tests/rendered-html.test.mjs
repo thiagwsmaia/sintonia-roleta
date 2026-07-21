@@ -33,7 +33,7 @@ test("server-renders the game shell", async () => {
   assert.match(html, /Sintonia Roleta/);
   assert.match(html, /jogo de mesa local/);
   assert.match(html, /50<!-- --> temas|50 temas/);
-  assert.match(html, /Área do mestre/);
+  assert.match(html, /Girar a janela secreta/);
   assert.match(html, /Definir centro da pontuacao maxima/);
   assert.match(html, /Segurar para o mestre ver/);
   assert.match(html, /Revelar e pontuar/);
