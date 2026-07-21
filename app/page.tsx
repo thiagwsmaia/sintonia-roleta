@@ -106,6 +106,7 @@ export default function Home() {
   const [round, setRound] = useState<Round>(initialRound);
   const [leftLabel, setLeftLabel] = useState(initialRound.card.left);
   const [rightLabel, setRightLabel] = useState(initialRound.card.right);
+  const [manualTargetOpen, setManualTargetOpen] = useState(false);
   const [guess, setGuess] = useState(50);
   const [revealed, setRevealed] = useState(false);
   const [peeking, setPeeking] = useState(false);
@@ -145,6 +146,7 @@ export default function Home() {
     setGuess(50);
     setRevealed(false);
     setPeeking(false);
+    setManualTargetOpen(false);
     setClue("");
     setLastPoints(null);
     setRoundNumber((value) => value + 1);
@@ -162,6 +164,7 @@ export default function Home() {
     setPeeking(false);
     setRevealed(false);
     setLastPoints(null);
+    setManualTargetOpen(false);
   }
 
   function reveal() {
@@ -258,18 +261,28 @@ export default function Home() {
               >
                 Sortear pontuação
               </button>
-              <input
-                aria-label="Definir centro da pontuacao maxima"
-                type="range"
-                min="6"
-                max="94"
-                value={round.target}
-                onChange={(event) => setTarget(Number(event.target.value))}
+              <button
+                className="manual-target-button"
+                type="button"
+                onClick={() => setManualTargetOpen((value) => !value)}
                 disabled={revealed}
-              />
+              >
+                {manualTargetOpen ? "Ocultar ajuste manual" : "Ajustar manualmente"}
+              </button>
+              {manualTargetOpen ? (
+                <input
+                  aria-label="Definir centro da pontuacao maxima"
+                  type="range"
+                  min="6"
+                  max="94"
+                  value={round.target}
+                  onChange={(event) => setTarget(Number(event.target.value))}
+                  disabled={revealed}
+                />
+              ) : null}
               <small>
-                Gire ate a janela colorida ficar onde voce quer. Ao segurar, a
-                tampa sai da frente e mostra as fatias de pontuacao na roleta.
+                Use o sorteio para manter a posicao escondida. Segure para o
+                mestre ver a janela colorida na roleta.
               </small>
             </div>
           </aside>

@@ -35,7 +35,7 @@ test("server-renders the game shell", async () => {
   assert.match(html, /50<!-- --> temas|50 temas/);
   assert.match(html, /Girar a janela secreta/);
   assert.match(html, /Sortear pontuação/);
-  assert.match(html, /Definir centro da pontuacao maxima/);
+  assert.match(html, /Ajustar manualmente/);
   assert.match(html, /Segurar para o mestre ver/);
   assert.match(html, /Revelar e pontuar/);
   assert.match(html, /regioes de pontuação/);

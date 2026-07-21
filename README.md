@@ -13,6 +13,9 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 5. O grupo discute e move o ponteiro.
 6. Revele o alvo, some os pontos e troque a pessoa da vez.
 
+Use `Sortear pontuacao` para manter a posicao escondida do grupo. O ajuste
+manual fica oculto por padrao porque a posicao do controle entrega a resposta.
+
 ## Pontuacao
 
 - 4 pontos: distancia de 0 a 2 do centro da janela
