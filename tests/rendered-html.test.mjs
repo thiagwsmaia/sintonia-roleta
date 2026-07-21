@@ -32,7 +32,10 @@ test("server-renders the game shell", async () => {
   assert.match(html, /<title>Sintonia Roleta<\/title>/i);
   assert.match(html, /Sintonia Roleta/);
   assert.match(html, /jogo de mesa local/);
-  assert.match(html, /Revelar alvo/);
+  assert.match(html, /50<!-- --> temas|50 temas/);
+  assert.match(html, /Segurar para o mestre ver/);
+  assert.match(html, /Revelar e pontuar/);
+  assert.match(html, /regioes de pontuação/);
   assert.match(html, /Nova rodada/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
