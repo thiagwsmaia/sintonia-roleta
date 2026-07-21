@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Card = {
   theme: string;
@@ -66,6 +66,12 @@ const cards: Card[] = [
   },
 ];
 
+const initialRound: Round = {
+  card: cards[0],
+  target: 72,
+  band: 9,
+};
+
 function makeRound(): Round {
   return {
     card: cards[Math.floor(Math.random() * cards.length)],
@@ -87,13 +93,18 @@ function angleFor(value: number) {
 }
 
 export default function Home() {
-  const [round, setRound] = useState<Round>(() => makeRound());
+  const [round, setRound] = useState<Round>(initialRound);
   const [guess, setGuess] = useState(50);
   const [revealed, setRevealed] = useState(false);
   const [score, setScore] = useState(0);
   const [roundNumber, setRoundNumber] = useState(1);
   const [clue, setClue] = useState("");
   const [lastPoints, setLastPoints] = useState<number | null>(null);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setRound(makeRound()));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const distance = Math.abs(guess - round.target);
   const currentPoints = scoreFor(distance);
