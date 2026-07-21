@@ -349,6 +349,16 @@ h2 {
   accent-color: var(--ink);
 }
 
+.random-target-button {
+  min-height: 40px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--ink);
+  color: #ffffff;
+  box-shadow: 3px 3px 0 rgba(21, 26, 31, 0.42);
+  font-weight: 950;
+}
+
 .master-box small {
   padding: 8px 10px;
   border-radius: 6px;

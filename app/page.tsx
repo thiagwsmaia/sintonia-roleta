@@ -82,8 +82,12 @@ const initialRound: Round = {
 function makeRound(): Round {
   return {
     card: cards[Math.floor(Math.random() * cards.length)],
-    target: 50,
+    target: makeTarget(),
   };
+}
+
+function makeTarget() {
+  return Math.floor(6 + Math.random() * 89);
 }
 
 function scoreFor(distance: number) {
@@ -151,6 +155,13 @@ export default function Home() {
       ...value,
       target,
     }));
+  }
+
+  function randomizeTarget() {
+    setTarget(makeTarget());
+    setPeeking(false);
+    setRevealed(false);
+    setLastPoints(null);
   }
 
   function reveal() {
@@ -237,8 +248,16 @@ export default function Home() {
             <div className="master-box">
               <div>
                 <span>Girar a janela secreta</span>
-                <strong>{round.target}</strong>
+                <strong>{showTarget ? round.target : "??"}</strong>
               </div>
+              <button
+                className="random-target-button"
+                type="button"
+                onClick={randomizeTarget}
+                disabled={revealed}
+              >
+                Sortear pontuação
+              </button>
               <input
                 aria-label="Definir centro da pontuacao maxima"
                 type="range"

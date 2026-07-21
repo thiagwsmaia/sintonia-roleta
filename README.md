@@ -7,7 +7,7 @@ vem com 50 temas e sugestoes de dicas para acelerar as rodadas.
 ## Como jogar
 
 1. Abra uma nova rodada.
-2. A pessoa da vez gira a janela secreta para definir onde fica a faixa maxima.
+2. A pessoa da vez gira ou sorteia a janela secreta para definir onde fica a faixa maxima.
 3. Edite os dois extremos da escala se quiser adaptar o tema da rodada.
 4. Ela escolhe uma dica que combine com aquele ponto da escala.
 5. O grupo discute e move o ponteiro.
