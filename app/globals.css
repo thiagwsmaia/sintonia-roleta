@@ -92,15 +92,59 @@ input:disabled {
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
   width: 54px;
   height: 54px;
   place-items: center;
   border: 2px solid rgba(21, 26, 31, 0.92);
   border-radius: 50%;
-  background: var(--amber);
+  background:
+    conic-gradient(
+      from -20deg,
+      #f7e35a 0deg 44deg,
+      #ef6b5b 44deg 88deg,
+      #8bd5c2 88deg 132deg,
+      #f3b33f 132deg 176deg,
+      #f7e35a 176deg 220deg,
+      #ef6b5b 220deg 264deg,
+      #8bd5c2 264deg 308deg,
+      #f3b33f 308deg 360deg
+    );
   box-shadow: 5px 5px 0 rgba(21, 26, 31, 0.9);
-  font-weight: 900;
+  overflow: hidden;
+}
+
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid rgba(21, 26, 31, 0.88);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 4px;
+  height: 34%;
+  border-radius: 99px;
+  background: #151a1f;
+  transform: translateX(-50%) rotate(12deg);
+  transform-origin: 50% 100%;
+}
+
+.brand-mark span {
+  position: relative;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #151a1f;
+  border-radius: 50%;
+  background: #fffaf0;
 }
 
 .eyebrow {

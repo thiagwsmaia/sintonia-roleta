@@ -17,9 +17,14 @@ export const metadata: Metadata = {
   description:
     "Um jogo local de roleta social, alvo secreto, dicas e palpites em grupo.",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: "/favicon.svg",
   },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {

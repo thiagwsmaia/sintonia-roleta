@@ -184,7 +184,7 @@ export default function Home() {
       <section className="hero-band">
         <nav className="topbar" aria-label="Jogo">
           <div className="brand-mark" aria-hidden="true">
-            SR
+            <span />
           </div>
           <div>
             <p className="eyebrow">jogo de mesa local</p>
